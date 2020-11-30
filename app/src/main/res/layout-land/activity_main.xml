@@ -1,0 +1,90 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/time_left_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ProgressBar"
+        app:layout_constraintEnd_toEndOf="@+id/ProgressBar"
+        app:layout_constraintStart_toStartOf="@+id/ProgressBar"
+        app:layout_constraintTop_toTopOf="@+id/ProgressBar"
+        tools:text="25:00" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/circle_progress_bar"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:progressDrawable="@drawable/circle_progress"
+        android:rotation="-90"
+        app:layout_constraintBottom_toTopOf="@+id/play_timer_image_button"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.462" />
+
+    <ImageButton
+        android:id="@+id/play_timer_image_button"
+        style="@style/BorderlessSquareButton"
+        android:contentDescription="@string/play_button_description"
+        android:src="@drawable/ic_play_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pause_timer_image_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/pause_timer_image_button"
+        style="@style/BorderlessSquareButton"
+        android:contentDescription="@string/pause_button_description"
+        android:src="@drawable/ic_pause_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stop_timer_image_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/play_timer_image_button" />
+
+    <ImageButton
+        android:id="@+id/stop_timer_image_button"
+        style="@style/BorderlessSquareButton"
+        android:contentDescription="@string/stop_button_description"
+        android:src="@drawable/ic_stop_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/skip_activity_image_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pause_timer_image_button" />
+
+    <TextView
+        android:id="@+id/type_of_activity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/stop_timer_image_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ProgressBar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/activity_type_work" />
+
+    <ImageButton
+        android:id="@+id/skip_activity_image_button"
+        style="@style/BorderlessSquareButton"
+        android:src="@drawable/ic_skip_next_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/stop_timer_image_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

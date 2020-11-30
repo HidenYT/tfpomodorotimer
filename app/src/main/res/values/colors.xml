@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e53935</color>
+    <color name="colorPrimaryDark">#ab000d</color>
+    <color name="colorAccent">#e53935</color>
+
+    <color name="progress_background">#6abf69</color>
+    <color name="progress_foreground">#00600f</color>
+
+    <color name="square_borderless_button">#000</color>
+
+</resources>

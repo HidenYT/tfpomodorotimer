@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nice">Nice!</string>
+    <string name="work_time_notification_title">Время работы</string>
+    <string name="rest_time_notification_title">Перерыв</string>
+    <string name="stop_rest">Пришло время работать!</string>
+    <string name="stop_work">Сейчас вы можете отдохнуть!</string>
+    <string name="change_of_activity">Смена активности</string>
+
+    <string name="play_button_description">Запустить таймер</string>
+    <string name="pause_button_description">Поставить таймер на паузу</string>
+    <string name="stop_button_description">Остановить таймер</string>
+
+    <string name="activity_type_work">Работа</string>
+    <string name="activity_type_rest">Перерыв</string>
+
+    <string name="options_menu_credits">Благодарности</string>
+    <string name="options_menu_title">Меню</string>
+    <string name="options_menu_about">О приложении</string>
+    <string name="options_menu_settings">Настройки</string>
+    <string name="about_app_text">Это приложение сделано Touch Force. \nПодписывайтесь на нашу группу ВКонтакте: https://vk.com/touchforce  \n\nО технике помидора:  \nТехника помидора - это техника, которая поможет вам улучшить вашу продуктивность. \n1. Выберите себе задачу. \n2. Запустите таймер и работайте над задачей. \n3. По истечении времени сделайте перерыв. \n4. После каждых четырёх повторений вместо обычного перерыва сделайте большой перерыв.</string>
+    <string name="skip_button_description">Пропустить</string>
+    <string name="title_activity_settings">Настройки</string>
+    <string name="preferences_title_main">Основные</string>
+    <string name="preference_short_break_length">Продолжительность короткого перерыва</string>
+    <string name="preference_long_break_length">Продолжительность длинного перерыва</string>
+    <string name="activity_type_pause">Пауза</string>
+</resources>
