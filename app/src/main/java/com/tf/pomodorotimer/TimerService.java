@@ -18,8 +18,7 @@ public class TimerService extends Service {
     private final int shortBreakDefaultLength = 5;
     private final int longBreakDefaultLength = 15;
     public static final int workLength = 25*60;
-//    private int restLength = 5*60;
-    private int restLength = 5;
+    private int restLength = 5*60;
 
     private int longBreakLength = 5*60;
     public static final int updateFrequency = 1000;
@@ -36,9 +35,8 @@ public class TimerService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        restLength = 60 * mSharedPreferences
-//                .getInt(getString(R.string.preference_short_break_length_key), shortBreakDefaultLength);
-        restLength = 5;
+        restLength = 60 * mSharedPreferences
+                .getInt(getString(R.string.preference_short_break_length_key), shortBreakDefaultLength);
         longBreakLength = 60* mSharedPreferences
                 .getInt(getString(R.string.preference_long_break_length_key), longBreakDefaultLength);
 
@@ -171,7 +169,7 @@ public class TimerService extends Service {
 
     private void onWorkFinished(){
         startedTimes+=1;
-        if(startedTimes == 4){
+        if(startedTimes == 5){
             startedTimes = 0;
             currentTimer = createRestTimer(longBreakLength);
         }else{
