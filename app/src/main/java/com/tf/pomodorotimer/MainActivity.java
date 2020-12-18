@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements TimerService.Time
         @Override
         public void onClick(View v) {
             if(mBound){
+                Intent intent = new Intent(MainActivity.this, TimerService.class);
+                startService(intent);
                 mTimerService.start();
             }
         }
@@ -112,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements TimerService.Time
         @Override
         public void onClick(View v) {
             if(mBound){
+                Intent intent = new Intent(MainActivity.this, TimerService.class);
+                stopService(intent);
                 mTimerService.stop();
                 resetTimer();
             }
@@ -131,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements TimerService.Time
     protected void onStart() {
         super.onStart();
         Intent intent = new Intent(this, TimerService.class);
-        startService(intent);
         bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
     }
 
@@ -150,9 +154,8 @@ public class MainActivity extends AppCompatActivity implements TimerService.Time
         public void onServiceConnected(ComponentName className,
                                        IBinder service) {
             TimerService.TimerServiceBinder binder = (TimerService.TimerServiceBinder) service;
-            mTimerService = binder.getService();
+            mTimerService = binder.getService(MainActivity.this);
             mBound = true;
-            mTimerService.setTimerUpdatesListener(MainActivity.this);
         }
 
         @Override

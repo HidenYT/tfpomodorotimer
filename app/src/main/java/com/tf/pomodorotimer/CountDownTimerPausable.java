@@ -6,13 +6,19 @@ public abstract class CountDownTimerPausable {
     private long millisInFuture;
     private long countDownInterval;
     private long millisRemaining;
+    private long activityLength;
+
+    public long getActivityLength(){return activityLength;}
+
+    public long getMillisRemaining(){return millisRemaining;}
 
     private CountDownTimer countDownTimer = null;
 
     private boolean isPaused = true;
 
-    public CountDownTimerPausable(long millisInFuture, long countDownInterval) {
+    public CountDownTimerPausable(long millisInFuture, long countDownInterval, long activityLength) {
         super();
+        this.activityLength = activityLength;
         this.millisInFuture = millisInFuture;
         this.countDownInterval = countDownInterval;
         this.millisRemaining = this.millisInFuture;
